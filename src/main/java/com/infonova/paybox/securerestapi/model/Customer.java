@@ -1,12 +1,26 @@
 package com.infonova.paybox.securerestapi.model;
 
 public class Customer {
-    private String name;
-    private String addres;
 
-    public Customer(String name, String addres) {
+    private Long id;
+    private String name;
+    private String address;
+
+    public Customer() {
+    }
+
+    public Customer(Long id, String name, String address) {
+        this.id = id;
         this.name = name;
-        this.addres = addres;
+        this.address = address;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -17,12 +31,12 @@ public class Customer {
         this.name = name;
     }
 
-    public String getAddres() {
-        return addres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -32,22 +46,19 @@ public class Customer {
 
         Customer customer = (Customer) o;
 
-        if (name != null ? !name.equals(customer.name) : customer.name != null) return false;
-        return addres != null ? addres.equals(customer.addres) : customer.addres == null;
+        return id != null ? id.equals(customer.id) : customer.id == null;
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (addres != null ? addres.hashCode() : 0);
-        return result;
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "name='" + name + '\'' +
-                ", addres='" + addres + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

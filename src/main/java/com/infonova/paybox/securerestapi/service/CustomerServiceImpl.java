@@ -12,8 +12,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List getCustomers() {
         return Arrays.asList(
-                new Customer("bubu", "Timisoara"),
-                new Customer("bibi", "Sibiu"),
-                new Customer("cucu", "Brasov"));
+                new Customer(0l,"bubu", "Timisoara"),
+                new Customer(1l, "bibi", "Sibiu"),
+                new Customer(2l, "cucu", "Brasov"));
     }
 }

@@ -50,7 +50,8 @@ public class PayboxSecurityAdapter extends KeycloakWebSecurityConfigurerAdapter 
         super.configure(http);
         http
                 .authorizeRequests()
-                .antMatchers("/customers*").hasRole("user")
+                .antMatchers("/customers").hasRole("user")
+                .antMatchers("/customers/manage").hasRole("manager")
                 .anyRequest().permitAll();
     }
 }
